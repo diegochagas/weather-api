@@ -1,0 +1,6 @@
+# react-redux-weather-api
+Test with React and Redux using the Weather Api to show a list of city and its climes. After start, the access for this test is on http://localhost:8080/
+
+The city code that was used in this api is Auckland in New Zealand. You can find the list of all city codes in the documentation of the api.
+
+The Weather API are available on https://openweathermap.org/ .
