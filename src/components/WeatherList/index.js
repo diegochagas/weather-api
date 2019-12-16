@@ -37,7 +37,9 @@ export default function WeatherList() {
           return (
             <tr key={weather.city.id}>
               <td>
-                <GoogleMapComponent lng={lon} lat={lat} />
+                {weather.city.name}
+
+                {/* <GoogleMapComponent lng={lon} lat={lat} /> */}
               </td>
               <Chart data={temps} color="orange" units="C" />
               <Chart data={pressures} color="green" units="hPa" />
