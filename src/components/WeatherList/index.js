@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import _ from 'lodash';
 
 import Chart from '../Chart';
-import GoogleMap from '../GoogleMap';
+import GoogleMapComponent from '../GoogleMapComponent';
 
 import { Table } from './styles';
 
@@ -37,7 +37,7 @@ export default function WeatherList() {
           return (
             <tr key={weather.city.id}>
               <td>
-                <GoogleMap lon={lon} lat={lat} />
+                <GoogleMapComponent lng={lon} lat={lat} />
               </td>
               <Chart data={temps} color="orange" units="C" />
               <Chart data={pressures} color="green" units="hPa" />
