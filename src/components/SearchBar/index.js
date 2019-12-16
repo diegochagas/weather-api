@@ -7,6 +7,7 @@ import { updateWeatherRequest } from '../../store/modules/weather/actions';
 
 export default function SearchBar() {
   const [term, setTerm] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const dispatch = useDispatch();
 
@@ -14,16 +15,22 @@ export default function SearchBar() {
     setTerm(event.target.value);
   }
 
-  function onFormSubmit(event) {
+  function handleSearch(event) {
     event.preventDefault();
 
-    dispatch(updateWeatherRequest(term));
+    if (term) {
+      dispatch(updateWeatherRequest(term));
 
-    setTerm('');
+      setTerm('');
+
+      setErrorMessage('');
+    } else {
+      setErrorMessage('Write city name');
+    }
   }
 
   return (
-    <form onSubmit={onFormSubmit} className="input-group">
+    <form className="input-group">
       <input
         type="text"
         className="form-control"
@@ -32,10 +39,18 @@ export default function SearchBar() {
         onChange={onInputChange}
       />
       <span className="input-group-btn">
-        <button type="submit" className="btn btn-secondary">
+        <button
+          type="submit"
+          className="btn btn-secondary"
+          onClick={handleSearch}
+        >
           Submit
         </button>
       </span>
+
+      <div>
+        <small style={{ color: 'red' }}>{errorMessage}</small>
+      </div>
     </form>
   );
 }

@@ -6,7 +6,7 @@ import { types, updateWeatherSuccess, updateWeatherFailure } from './actions';
 
 export function* fetchWeather({ payload }) {
   try {
-    const city = payload.data;
+    const { city } = payload;
 
     const response = yield call(
       api.get,

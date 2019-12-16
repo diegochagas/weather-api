@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import weather from './weather/reducer';
+import weathers from './weather/reducer';
 
 export default combineReducers({
-  weather,
+  weathers,
 });

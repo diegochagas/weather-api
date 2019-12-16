@@ -4,10 +4,10 @@ export const types = {
   UPDATE_WEATHER_FAILURE: '@user/UPDATE_WEATHER_FAILURE',
 };
 
-export function updateWeatherRequest(data) {
+export function updateWeatherRequest(city) {
   return {
     type: types.UPDATE_WEATHER_REQUEST,
-    payload: { data },
+    payload: { city },
   };
 }
 
