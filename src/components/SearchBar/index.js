@@ -15,11 +15,11 @@ export default function SearchBar() {
     setTerm(event.target.value);
   }
 
-  function handleSearch(event) {
+  async function handleSearch(event) {
     event.preventDefault();
 
     if (term) {
-      dispatch(updateWeatherRequest(term));
+      await dispatch(updateWeatherRequest(term));
 
       setTerm('');
 
@@ -27,7 +27,7 @@ export default function SearchBar() {
     }
 
     if (term === '') {
-      setErrorMessage('Write city name');
+      setErrorMessage('Write a New Zealand city name');
     }
   }
 
@@ -37,7 +37,7 @@ export default function SearchBar() {
         <input
           type="text"
           className="form-control"
-          placeholder="Get a five-day forecast in your favorite cities"
+          placeholder="Get a five-day forecast in a New Zealand city"
           value={term}
           onChange={onInputChange}
         />
