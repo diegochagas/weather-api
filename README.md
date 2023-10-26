@@ -8,6 +8,3 @@ The Weather API are available on https://openweathermap.org/ .
 
 The Google Maps was also used to show the location of the cities. (Not working with React Hooks yet)
 
----
-
-# Jesus said to him, "I am the way, and the truth, and the life. No one comes to the Father except through me." - John 14:6
